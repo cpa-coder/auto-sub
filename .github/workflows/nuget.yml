@@ -1,0 +1,48 @@
+﻿name: Publish to Nuget
+
+on:
+  push:
+    tags:
+    - 'v*'
+
+env:
+   PROJECT_PATH: 'src/AutoSub/AutoSub.csproj'
+   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+
+jobs:
+  deploy:
+    name: 'Publish to Nuget'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 'Checkout'
+      uses: actions/checkout@v3
+    
+    - name: 'Get Version'
+      id: version
+      uses: battila7/get-version-action@v2
+    
+    - name: 'Update File Version'
+      run: |
+        ./build/update-version.ps1 -build_number ${{ steps.version.outputs.major }}.${{ steps.version.outputs.minor }}.${{ steps.version.outputs.patch }} -project_path ${{ github.workspace }}/${{ env.PROJECT_PATH }}
+      shell: pwsh
+          
+    - name: 'Setup .NET'
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.x
+        
+    - name: 'Restore Dependencies'
+      run: dotnet restore
+    
+    - name: 'Build'
+      run: dotnet build --no-restore --configuration Release
+      
+    - name: 'Test'
+      run: dotnet test --no-restore --no-build --configuration Release --logger "trx;LogFileName=TestResults.trx" --results-directory ${{ github.workspace }}\test-results
+    
+    - name: 'Pack Project'
+      run: dotnet pack ${{ env.PROJECT_PATH }} --no-restore --no-build --configuration Release --include-symbols -p:PackageVersion=${{ steps.version.outputs.version-without-v }} --output ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
+    
+    - name: 'Publish'
+      run: nuget push **\*.nupkg -Source 'https://api.nuget.org/v3/index.json' -ApiKey ${{secrets.NUGET_API_KEY}}
