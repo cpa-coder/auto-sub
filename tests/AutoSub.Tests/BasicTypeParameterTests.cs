@@ -17,304 +17,304 @@ public class BasicTypeParameterTests
     [Fact]
     public void bool__on_default__instance_value_should_should_be_false()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<bool>>();
+        var instance = factory.Create<BasicType<bool>>();
         instance.Value.Should().BeFalse();
     }
 
     [Fact]
     public void bool__when_set_to_true__instance_value_should_should_be_true()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<bool>(true);
+        var factory = new SubFactory();
+        factory.Setup<bool>(true);
 
-        var instance = autoSub.Create<BasicType<bool>>();
+        var instance = factory.Create<BasicType<bool>>();
         instance.Value.Should().BeTrue();
     }
 
     [Fact]
     public void byte__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<byte>>();
+        var instance = factory.Create<BasicType<byte>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void byte__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<byte>(1);
+        var factory = new SubFactory();
+        factory.Setup<byte>(1);
 
-        var instance = autoSub.Create<BasicType<byte>>();
+        var instance = factory.Create<BasicType<byte>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void sbyte__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<sbyte>>();
+        var instance = factory.Create<BasicType<sbyte>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void sbyte__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<sbyte>(1);
+        var factory = new SubFactory();
+        factory.Setup<sbyte>(1);
 
-        var instance = autoSub.Create<BasicType<sbyte>>();
+        var instance = factory.Create<BasicType<sbyte>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void short__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<short>>();
+        var instance = factory.Create<BasicType<short>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void short__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<short>(1);
+        var factory = new SubFactory();
+        factory.Setup<short>(1);
 
-        var instance = autoSub.Create<BasicType<short>>();
+        var instance = factory.Create<BasicType<short>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void ushort__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<ushort>>();
+        var instance = factory.Create<BasicType<ushort>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void ushort__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<ushort>(1);
+        var factory = new SubFactory();
+        factory.Setup<ushort>(1);
 
-        var instance = autoSub.Create<BasicType<ushort>>();
+        var instance = factory.Create<BasicType<ushort>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void int__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<int>>();
+        var instance = factory.Create<BasicType<int>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void int__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<int>(1);
+        var factory = new SubFactory();
+        factory.Setup<int>(1);
 
-        var instance = autoSub.Create<BasicType<int>>();
+        var instance = factory.Create<BasicType<int>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void uint__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<uint>>();
+        var instance = factory.Create<BasicType<uint>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void uint__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<uint>(1);
+        var factory = new SubFactory();
+        factory.Setup<uint>(1);
 
-        var instance = autoSub.Create<BasicType<uint>>();
+        var instance = factory.Create<BasicType<uint>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void long__on_default__instance_value_should_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<long>>();
+        var instance = factory.Create<BasicType<long>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void long__when_set_to_1__instance_value_should_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<long>(1);
+        var factory = new SubFactory();
+        factory.Setup<long>(1);
 
-        var instance = autoSub.Create<BasicType<long>>();
+        var instance = factory.Create<BasicType<long>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void ulong__on_default__instance_value_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<ulong>>();
+        var instance = factory.Create<BasicType<ulong>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void ulong__when_set_to_1__instance_value_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<ulong>(1);
+        var factory = new SubFactory();
+        factory.Setup<ulong>(1);
 
-        var instance = autoSub.Create<BasicType<ulong>>();
+        var instance = factory.Create<BasicType<ulong>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void float__on_default__instance_value_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<float>>();
+        var instance = factory.Create<BasicType<float>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void float__when_set_to_1__instance_value_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<float>(1);
+        var factory = new SubFactory();
+        factory.Setup<float>(1);
 
-        var instance = autoSub.Create<BasicType<float>>();
+        var instance = factory.Create<BasicType<float>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void double__on_default__instance_value_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<double>>();
+        var instance = factory.Create<BasicType<double>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void double__when_set_to_1__instance_value_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<double>(1);
+        var factory = new SubFactory();
+        factory.Setup<double>(1);
 
-        var instance = autoSub.Create<BasicType<double>>();
+        var instance = factory.Create<BasicType<double>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void decimal__on_default__instance_value_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<decimal>>();
+        var instance = factory.Create<BasicType<decimal>>();
         instance.Value.Should().Be(0);
     }
 
     [Fact]
     public void decimal__when_set_to_1__instance_value_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<decimal>(1);
+        var factory = new SubFactory();
+        factory.Setup<decimal>(1);
 
-        var instance = autoSub.Create<BasicType<decimal>>();
+        var instance = factory.Create<BasicType<decimal>>();
         instance.Value.Should().Be(1);
     }
 
     [Fact]
     public void char__on_default__instance_value_should_be_0()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<char>>();
+        var instance = factory.Create<BasicType<char>>();
         instance.Value.Should().Be('\0');
     }
 
     [Fact]
     public void char__when_set_to_1__instance_value_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<char>('1');
+        var factory = new SubFactory();
+        factory.Setup<char>('1');
 
-        var instance = autoSub.Create<BasicType<char>>();
+        var instance = factory.Create<BasicType<char>>();
         instance.Value.Should().Be('1');
     }
 
     [Fact]
     public void string__on_default__instance_value_should_be_null()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<string>>();
+        var instance = factory.Create<BasicType<string>>();
         instance.Value.Should().BeNull();
     }
 
     [Fact]
     public void string__when_set_to_1__instance_value_should_be_1()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<string>("1");
+        var factory = new SubFactory();
+        factory.Setup<string>("1");
 
-        var instance = autoSub.Create<BasicType<string>>();
+        var instance = factory.Create<BasicType<string>>();
         instance.Value.Should().Be("1");
     }
 
     [Fact]
     public void date_time__on_default__instance_value_should_be_default()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<DateTime>>();
+        var instance = factory.Create<BasicType<DateTime>>();
         instance.Value.Should().Be(default);
     }
 
     [Fact]
     public void date_time__when_value_is_set__should_return_instance_with_same_value()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<DateTime>(DateTime.Today);
+        var factory = new SubFactory();
+        factory.Setup<DateTime>(DateTime.Today);
 
-        var instance = autoSub.Create<BasicType<DateTime>>();
+        var instance = factory.Create<BasicType<DateTime>>();
         instance.Value.Should().Be(DateTime.Today);
     }
 
     [Fact]
     public void time_span__on_default__instance_value_should_be_default()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<TimeSpan>>();
+        var instance = factory.Create<BasicType<TimeSpan>>();
         instance.Value.Should().Be(default);
     }
 
     [Fact]
     public void time_span__when_value_is_set__should_return_instance_with_same_value()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<TimeSpan>(TimeSpan.FromDays(1));
+        var factory = new SubFactory();
+        factory.Setup<TimeSpan>(TimeSpan.FromDays(1));
 
-        var instance = autoSub.Create<BasicType<TimeSpan>>();
+        var instance = factory.Create<BasicType<TimeSpan>>();
         instance.Value.Should().Be(TimeSpan.FromDays(1));
     }
 
@@ -327,19 +327,19 @@ public class BasicTypeParameterTests
     [Fact]
     public void enum__on_default__instance_value_should_be_null()
     {
-        var autoSub = new AutoSub();
+        var factory = new SubFactory();
 
-        var instance = autoSub.Create<BasicType<CustomEnum>>();
+        var instance = factory.Create<BasicType<CustomEnum>>();
         instance.Value.Should().Be(CustomEnum.First);
     }
 
     [Fact]
     public void enum__when_value_is_set__should_return_instance_with_same_value()
     {
-        var autoSub = new AutoSub();
-        autoSub.Setup<CustomEnum>(CustomEnum.Second);
+        var factory = new SubFactory();
+        factory.Setup<CustomEnum>(CustomEnum.Second);
 
-        var instance = autoSub.Create<BasicType<CustomEnum>>();
+        var instance = factory.Create<BasicType<CustomEnum>>();
         instance.Value.Should().Be(CustomEnum.Second);
     }
 }

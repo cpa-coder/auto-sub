@@ -6,7 +6,7 @@ namespace AutoSub;
 /// <summary>
 ///     Allows you to configure object dependencies with mocks, fakes, or stubs for ease of testing system under test.
 /// </summary>
-public class AutoSub
+public class SubFactory
 {
     private readonly Dictionary<Type, object?> _parameters = new();
     private readonly Dictionary<string, (Type type, object? proxy)> _namedParameters = new();
@@ -16,8 +16,8 @@ public class AutoSub
     /// </summary>
     /// <param name="func">The function to configure properties and methods of <see cref="T" />.</param>
     /// <typeparam name="T">Type type of parameter you want to configure.</typeparam>
-    /// <returns><see cref="AutoSub" /> for a fluent syntax.</returns>
-    public AutoSub Setup<T>(Action<ISetup<T>> func) where T : class
+    /// <returns><see cref="SubFactory" /> for a fluent syntax.</returns>
+    public SubFactory Setup<T>(Action<ISetup<T>> func) where T : class
     {
         func.Invoke(new Setup<T>(_parameters));
         return this;
@@ -28,9 +28,9 @@ public class AutoSub
     /// </summary>
     /// <param name="value">The value which substitutes <see cref="T" />.</param>
     /// <typeparam name="T">Type type of parameter you want to configure.</typeparam>
-    /// <returns><see cref="AutoSub" /> for a fluent syntax.</returns>
+    /// <returns><see cref="SubFactory" /> for a fluent syntax.</returns>
     /// <tips>Setup with specified parameter name overrides this method.</tips>
-    public AutoSub Setup<T>(T? value) where T : struct
+    public SubFactory Setup<T>(T? value) where T : struct
     {
         if (_parameters.ContainsKey(typeof(T)))
             _parameters[typeof(T)] = value;
@@ -45,9 +45,9 @@ public class AutoSub
     /// </summary>
     /// <param name="value">The value which substitutes <see cref="T" />.</param>
     /// <typeparam name="T">Type type of parameter you want to configure.</typeparam>
-    /// <returns><see cref="AutoSub" /> for a fluent syntax.</returns>
+    /// <returns><see cref="SubFactory" /> for a fluent syntax.</returns>
     /// <tips>Setup with specified parameter name overrides this method.</tips>
-    public AutoSub Setup<T>(T value) where T : class
+    public SubFactory Setup<T>(T value) where T : class
     {
         if (_parameters.ContainsKey(typeof(T)))
             _parameters[typeof(T)] = value;
@@ -63,9 +63,9 @@ public class AutoSub
     /// <param name="parameterName">The parameter name specified in the constructor</param>
     /// <param name="value">The value which substitutes <see cref="T" />.</param>
     /// <typeparam name="T">Type type of parameter you want to configure.</typeparam>
-    /// <returns><see cref="AutoSub" /> for a fluent syntax.</returns>
+    /// <returns><see cref="SubFactory" /> for a fluent syntax.</returns>
     /// <reminder>Make sure to match the corresponding parameter name in the constructor</reminder>
-    public AutoSub Setup<T>(string parameterName, T? value) where T : struct
+    public SubFactory Setup<T>(string parameterName, T? value) where T : struct
     {
         _namedParameters.Add(parameterName, (typeof(T), value));
         return this;
@@ -77,9 +77,9 @@ public class AutoSub
     /// <param name="parameterName">The parameter name specified in the constructor</param>
     /// <param name="value">The value which substitutes <see cref="T" />.</param>
     /// <typeparam name="T">Type type of parameter you want to configure.</typeparam>
-    /// <returns><see cref="AutoSub" /> for a fluent syntax.</returns>
+    /// <returns><see cref="SubFactory" /> for a fluent syntax.</returns>
     /// <reminder>Make sure to match the corresponding parameter name in the constructor</reminder>
-    public AutoSub Setup<T>(string parameterName, T value) where T : class
+    public SubFactory Setup<T>(string parameterName, T value) where T : class
     {
         _namedParameters.Add(parameterName, (typeof(T), value));
         return this;
