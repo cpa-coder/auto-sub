@@ -24,7 +24,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AutoSub\AutoSub.csproj" />
+        <ProjectReference Include="..\..\src\AutoSub\AutoSub.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSub", "AutoSub\AutoSub.csproj", "{3C0A0886-F3E8-445C-B0EC-9AD086FC21F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSub", "src\AutoSub\AutoSub.csproj", "{3C0A0886-F3E8-445C-B0EC-9AD086FC21F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSub.Tests", "AutoSub.Tests\AutoSub.Tests.csproj", "{B1A715B0-1B7C-480E-8BCE-78128E34C3C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoSub.Tests", "tests\AutoSub.Tests\AutoSub.Tests.csproj", "{B1A715B0-1B7C-480E-8BCE-78128E34C3C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{EFA52B93-4163-4D68-8E64-02B729C3B65D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E4716FD4-D3AA-4643-A42B-5C288C6DE6D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +22,9 @@ Global
 		{B1A715B0-1B7C-480E-8BCE-78128E34C3C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1A715B0-1B7C-480E-8BCE-78128E34C3C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1A715B0-1B7C-480E-8BCE-78128E34C3C8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C0A0886-F3E8-445C-B0EC-9AD086FC21F0} = {EFA52B93-4163-4D68-8E64-02B729C3B65D}
+		{B1A715B0-1B7C-480E-8BCE-78128E34C3C8} = {E4716FD4-D3AA-4643-A42B-5C288C6DE6D6}
 	EndGlobalSection
 EndGlobal
