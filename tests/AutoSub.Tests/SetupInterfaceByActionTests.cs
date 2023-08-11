@@ -6,7 +6,6 @@ namespace AutoSub.Tests;
 
 public class SetupInterfaceByActionTests
 {
-    //setup properties should return with the same value
     [Fact]
     public void setup_properties__should_return_with_the_same_value()
     {
@@ -18,7 +17,6 @@ public class SetupInterfaceByActionTests
         instance.Dependency.Value.Should().Be(1);
     }
 
-    //setup void methods should be called
     [Fact]
     public void setup_void_methods__should_receive_call()
     {
@@ -30,7 +28,6 @@ public class SetupInterfaceByActionTests
         instance.Dependency.Received().SetValue(Arg.Any<int>());
     }
 
-    //setup methods with return value should return with the same value
     [Fact]
     public void setup_methods_with_return_value__should_return_with_the_same_value()
     {
@@ -42,7 +39,6 @@ public class SetupInterfaceByActionTests
         instance.Dependency.GetValue().Should().Be(1);
     }
 
-    //setup async task methods should receive call
     [Fact]
     public async Task setup_async_task_methods__should_receive_call()
     {
@@ -54,7 +50,6 @@ public class SetupInterfaceByActionTests
         await instance.Dependency.Received().SetValueAsync(Arg.Any<int>());
     }
 
-    //setup async task methods with return value should return with the same value
     [Fact]
     public async Task setup_async_task_methods_with_return_value__should_return_with_the_same_value()
     {
@@ -67,7 +62,6 @@ public class SetupInterfaceByActionTests
         result.Should().Be(1);
     }
 
-    //setup void methods to throw exception
     [Fact]
     public void setup_void_methods_to_throw_exception()
     {
@@ -81,7 +75,6 @@ public class SetupInterfaceByActionTests
         act.Should().Throw<Exception>();
     }
 
-    //setup async task methods to throw exception
     [Fact]
     public async Task setup_async_task_methods_to_throw_exception()
     {
@@ -92,8 +85,7 @@ public class SetupInterfaceByActionTests
         var instance = factory.Create<ConcreteClass>();
         await Assert.ThrowsAsync<Exception>(() => instance.Dependency.SetValueAsync(0));
     }
-    
-    //setup non-void methods to throw exception
+
     [Fact]
     public void setup_non_void_methods_to_throw_exception()
     {
@@ -105,8 +97,7 @@ public class SetupInterfaceByActionTests
         var act = () => instance.Dependency.GetValue();
         act.Should().Throw<Exception>();
     }
-    
-    //setup async task with result methods to throw exception
+
     [Fact]
     public async Task setup_async_task_with_result_methods_to_throw_exception()
     {
